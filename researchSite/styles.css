@@ -11,6 +11,11 @@
 
 .authors {
     background-color: #b1ebf7;
+    padding: 30px;
+}
+
+.card-img-top {
+    height: 400px;
 }
 
 .footer {
@@ -49,11 +54,16 @@
 
 .procedure {
     background-color: #b1ebf7;
-    padding: 1px;
+    padding: 30px;
 }
 
 .showcase {
     background-color: #85b9da;
+}
+
+.table img {
+    max-width: 200px;
+    max-height: 150px;
 }
 
 /* ---------------------------- ID --------------------------- */
