@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Research Project</title>
@@ -10,7 +11,7 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
             integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
-        <link rel="stylesheet" href="stylesSE.css">
+        <link rel="stylesheet" href="styles.css">
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -48,46 +49,73 @@
             </div>
         </nav>
 
-        <!-- How to use the sensor -->
+        <!-- Procedure -->
         <section class="procedure">
             <div class="container">
-                <br>
-                <div class="text-center">
-                    <h1>Procedure</h1>
-                    <h2>Using a numbered list, describe your procedure w/ pictures</h2>
-                </div>
-                <hr><br>
+            <br> <!-- Line break -->
+            <div class="text-center">
+                <h1 >Procedure</h1>
+                <h2>Using a numbered list, describe your procedure (incude pictures)</h2>
+            </div>
+            
+            <hr><br> <!-- Horizontal line and line break -->
 
-                <table class="table table-hover table-borderless">
-                    <tbody>
-                        <tr>
-                            <th scope="row"><h2>Step 1</h2></th>
-                            <td><p class="howTo">Start Python Flask server.</p></td>
-                            <td class="text-center"><img src="img/pythonLogo.png" alt="Python Logo"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><h2>Step 2</h2></th>
-                            <td><p class="howTo">Power circuit on.  Sr-04/05 transmits data to Nano IoT.</p></td>
-                            <td class="text-center"><img src="img/rangeFinderTP.png" alt="SR04 Range Finder"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><h2>Step 3</h2></th>
-                            <td><p class="howTo">Nano IoT connects to PC via Wi-Fi and sends data to Arduino program.</p></td>
-                            <td class="text-center"><img src="img/nano33IoT3.png" alt="Nano 33 IoT"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><h2>Step 4</h2></th>
-                            <td><p class="howTo">Arduino and Flask server communicate via HTTP request protocol.</p></td>
-                            <td class="text-center"><img src="img/arduinoLogo.png" alt="Arduino Logo"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><h2>Step 5</h2></th>
-                            <td><p class="howTo">Flask connects to Firebase and sends data to storage.</p></td>
-                            <td class="text-center"><img src="img/firebaseLogo.png" alt="Firebase Logo"></td>
-                        </tr>
-                    </tbody>
-                </table>
-
+            <table class="table table-hover text-center table-light table-bordered border-dark-subtle">
+                <thead>
+                <tr class="table-primary">
+                    <th><h3>Step</h3></th>
+                    <th><h3>Description</h3></th>
+                    <th><h3>Image</h3></th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                <tr class="align-middle">
+                    <th scope="row" class="table-secondary">
+                    <h3>1</h3>
+                    </th> <!-- scope="row" specifies header cell is the header for a row -->
+                    <td>
+                    <h3>Start Python Flask server</h3>
+                    </td>
+                    <td class="text-center"><img src="img/pythonlogo.png" alt="Python Logo"></td>
+                </tr>
+                <tr class="align-middle">
+                    <th scope="row" class="table-secondary">
+                    <h3>2</h3>
+                    </th>
+                    <td>
+                    <h3>Power circuit on. SR-04/05 transmits data to Nano IOT</h3>
+                    </td>
+                    <td class="text-center"><img src="img/rangefindertp.png" alt="SRO4 Range Finder"></td>
+                </tr>
+                <tr class="align-middle">
+                    <th scope="row" class="table-secondary">
+                    <h3>3</h3>
+                    </th>
+                    <td>
+                    <h3>Nano IoT connects to PC via Wi-Fi and sends data to Arduino program.</h3>
+                    </td>
+                    <td class="text-center"><img src="img/nano33iot3.png" alt="Nano 33 IoT"></td>
+                </tr>
+                <tr class="align-middle">
+                    <th scope="row" class="table-secondary">
+                    <h3>4</h3>
+                    </th>
+                    <td>
+                    <h3>Arduino and Flask server communicate via HTTP request protocol.</h3>
+                    </td>
+                    <td class="text-center"><img src="img/arduinologo.png" alt="Arduino Logo"></td>
+                </tr>
+                <tr class="align-middle">
+                    <th scope="row" class="table-secondary">
+                    <h3>5</h3>
+                    </th>
+                    <td>
+                    <h3>Flask connects to Firebase and sends data for storage.</h3>
+                    </td>
+                    <td class="text-center"><img src="img/firebaselogo.png" alt="Firebase"></td>
+                </tr>
+                </tbody>
+            </table>
             </div>
         </section>
 
