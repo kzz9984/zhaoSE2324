@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Fetch Demo 1</title>
+</head>
+<body>
+    <img src="" id="panda" width="480" alt="">
+
+    <script>
+        /* Use JS Fetch to get image data and convert it to an image
+        element using .then method */
+
+        const imageUrl="https://images.unsplash.com/photo-1570288685369-f7305163d0e3?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        console.log('Fetching panda image');
+        
+        fetch(imageUrl)    // Fetch the image, which is returned in the reponse as a BLOB
+        .then(response => {
+            console.log(response);    // For debugging purposes only
+            return response.blob();
+        }).then(blob => {
+            // Setting the id = blob will result in an error because the BLOB is the wrong format
+            /* Incorrect code:
+            document.getElementById('panda').src = blob;
+            console.log('Here is the BLOB: ' + blob); */
+
+            document.getElementById('panda').src = blob;
+            console.log('Here is the BLOB: ' + blob);
+            
+            document.getElementById('panda').src = URL.createObjectURL(blob);
+            console.log('Here is the local URL: ' + URL.createObjectURL(blob))
+        })
+        .catch(error => {
+            console.log('Error. Image could not be loaded.');
+            console.error(error);
+        });
+    </script>
+
+</body>
+</html>
