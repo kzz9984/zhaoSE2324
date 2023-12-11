@@ -7,6 +7,7 @@ async function getData(){
   // Define variables for data
   const state = [];
   const positive = [];
+  const hospitalized = [];
 
   const tbodyEl = document.querySelector('tbody');  // Select <tbody> element
 
@@ -19,6 +20,7 @@ async function getData(){
       for(let i = 0; i < data.length; i++){
         state.push(data[i].state);
         positive.push(data[i].positive);
+        hospitalized.push(data[i].hospitalizedCurrently)
         //console.log(state[i], positive[i]);
 
         // Dynamically add table rows to HTML using string interpolation
@@ -29,6 +31,80 @@ async function getData(){
         </tr>`;
       }
     })
+  
+  return {state, positive, hospitalized};
 }
 
-getData();
+async function createChart() {
+  const data = await getData();    // createChart will wait until getData() is finished processing
+  const ctx = document.getElementById('chart');
+  const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: data.state,
+          datasets: [
+            {
+                data: data.positive,
+                fill: false,
+                backgroundColor: 'rgba(0, 0, 0, 1)',
+                borderWidth: 0
+            }
+          ]
+      },
+      options: {
+          responsive: true,   // Re-size based on screen size
+          scales: {           // Display options for x & y axes
+              x: {
+                  title: {
+                      display: true,
+                      text: 'State',   // x-axis title
+                      font: {         // font properties
+                          size: 20
+                      }
+                  },
+                  ticks: {
+                      autoSkip: false,
+                      maxRotation: 90,
+                      minRotation: 90,
+                      font: {
+                          size: 8
+                      }
+                  }
+              },
+              y: {
+                  title: {
+                      display: true,
+                      text: 'Positive Cases',
+                      font: {
+                          size: 20
+                      }
+                  },
+                  ticks: {
+                      maxTicksLimit: 20,    // limit # of ticks
+                      font: {
+                          size: 12
+                      }
+                  }
+              }
+          },
+          plugins: {          // Display options
+              title: {
+                  display: true,
+                  text: 'Positive COVID-19 Cases vs. State on 6/13/20',
+                  font: {
+                      size: 24
+                  },
+                  padding: {
+                      top: 10,
+                      bottom: 30
+                  }
+              },
+              legend: {
+                display: false
+              }
+          }
+      }
+  });
+}
+
+createChart();

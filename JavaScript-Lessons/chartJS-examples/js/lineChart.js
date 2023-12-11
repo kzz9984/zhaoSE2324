@@ -87,7 +87,7 @@ async function createChart() {
                     ticks: {
                         callback: function(val, index) {
                             // Labeling of tick marks can be controlled by code and font size
-                            return index % 5 === 0 ? this.getLabelForValue(val) : '';
+                            return this.getLabelForValue(val);
                         },
                         font: {
                             size: 16
