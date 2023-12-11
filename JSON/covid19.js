@@ -67,7 +67,7 @@ async function createChart() {
                       maxRotation: 90,
                       minRotation: 90,
                       font: {
-                          size: 8
+                          size: 12
                       }
                   }
               },
@@ -107,4 +107,27 @@ async function createChart() {
   });
 }
 
+async function averages() {
+    const data = await getData();    // averages will wait until getData() is finished processing
+    const positiveEl = document.getElementById('positiveAvg');
+    const hospitalizedEl = document.getElementById('hospitalizedAvg');
+
+    // Calculate average of the number of positive cases for all U.S. territories
+    let positiveSum = 0;
+    for (const state in data.positive) {
+        positiveSum += data.positive[state];
+    }
+    let positiveAvg = positiveSum / data.positive.length;
+    positiveEl.textContent += positiveAvg;
+
+    // Calculate average of the number of currently hospitalized cases for all U.S. territories
+    let hospitalizedSum = 0;
+    for (const state in data.hospitalized) {
+        hospitalizedSum += data.hospitalized[state];
+    }
+    let hospitalizedAvg = hospitalizedSum / data.hospitalized.length;
+    hospitalizedEl.textContent += hospitalizedAvg;
+}
+
 createChart();
+averages();
