@@ -5,7 +5,7 @@ table th{
 }
 
 .covid-table{
-    max-height: 250px;  /*prevent able from stretching to bottom of screen*/
+    max-height: 250px;  /*prevent table from stretching to bottom of screen*/
     overflow: auto;
 }
 
