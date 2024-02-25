@@ -1,0 +1,16 @@
+<!-- 1. home2.html is the home page for this site.
+     2. It inherits all of the boilerplate code and body code from layout.html
+     3. You can include html code and JS scripts along with Jinja2 syntax-->
+    
+{% extends "layout.html" %} <!-- home2.html will build upon layout.html code -->
+
+{% block content %}         <!-- Place this code into the block called 'content'
+                                 that was inherited from layout.html-->
+
+    <!-- Iterate through and display posts defined in Flask_2.py-->
+    {% for post in posts %}
+        <h1>{{ post.title }}</h1>
+        <p>By {{ post.author }} on {{ post.date_posted }}</p>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+{% endblock content%}

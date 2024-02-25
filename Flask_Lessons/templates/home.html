@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {# Jinja 2 Primer
+            {%....%} are for statements that will be executed (loops, conditionals, etc.)
+            {{....}} are for expressesions used to print template output
+                        (including references to external CSS, JS and image files) #}
+        <!--{#....#} are for comments that are not included in the template output -->
+
+        <!-- If a title is passed as a parameter use that, else use the default title -->
+        {% if title %}
+            <title>Flask Tutorial - {{ title }}</title>
+        {% else %}
+            <title>Flask Tutorial</title>
+        {% endif %}
+</head>
+
+<body>
+    <!-- Use a for loop to iterate through the posts in the python dict. passed in as parameters-->
+    {% for post in posts %}
+        <h1>{{ post.title }}</h1>
+        <p>By {{ post.author }} on {{ post.date_posted }}</p>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+
+</body>
+</html>
