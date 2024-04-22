@@ -1,0 +1,43 @@
+{
+    "coord": {
+      "lon": -74.121,
+      "lat": 40.3307
+    },
+    "weather": [
+      {
+        "id": 800,
+        "main": "Clear",
+        "description": "clear sky",
+        "icon": "01d"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 77.52,
+      "feels_like": 76.66,
+      "temp_min": 72.12,
+      "temp_max": 81.14,
+      "pressure": 1011,
+      "humidity": 36
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 9.22,
+      "deg": 260
+    },
+    "clouds": {
+      "all": 0
+    },
+    "dt": 1713200050,
+    "sys": {
+      "type": 2,
+      "id": 2008385,
+      "country": "US",
+      "sunrise": 1713176236,
+      "sunset": 1713224104
+    },
+    "timezone": -14400,
+    "id": 5100498,
+    "name": "Lincroft",
+    "cod": 200
+  }
